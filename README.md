@@ -1,0 +1,4 @@
+cornerstone
+===========
+
+Core JavaScript Extensions.
