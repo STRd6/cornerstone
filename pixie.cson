@@ -1,0 +1,9 @@
+version: "0.5.0"
+entryPoint: "cornerstone"
+remoteDependencies: [
+  "http://strd6.github.io/require/v0.2.2.js"
+]
+dependencies:
+  math: "STRd6/math:v0.1.0"
+  extensions: "STRd6/extensions:v0.1.0"
+  core: "STRd6/core:v0.5.0"
