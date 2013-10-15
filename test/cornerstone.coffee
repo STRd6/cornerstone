@@ -12,3 +12,6 @@ describe "Cornerstone", ->
   
   it "should provide Random", ->
     assert Random
+
+  it "should have String#constantize", ->
+    assert.equal "Object".constantize(), Object

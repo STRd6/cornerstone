@@ -8,3 +8,4 @@ Require and pollute.
     global.Core = require("core")
 
     require("math").pollute()
+    require("inflector").pollute()
