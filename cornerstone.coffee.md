@@ -5,5 +5,6 @@ Require and pollute.
 
     require "extensions"
 
-    require('math').pollute()
-    require('core').pollute()
+    global.Core = require("core")
+
+    require("math").pollute()
