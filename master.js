@@ -5,6 +5,8 @@
 
   require("math").pollute();
 
+  require("inflector").pollute();
+
 }).call(this);
 
 //# sourceURL=cornerstone.coffee
