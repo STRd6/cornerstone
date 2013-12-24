@@ -1,10 +1,6 @@
-version: "0.5.0"
+version: "0.2.0"
 entryPoint: "cornerstone"
-remoteDependencies: [
-  "http://strd6.github.io/require/v0.2.2.js"
-]
 dependencies:
-  math: "STRd6/math:v0.1.0"
-  extensions: "STRd6/extensions:v0.1.0"
-  core: "STRd6/core:v0.5.0"
-  inflector: "STRd6/inflecta:v0.1.0"
+  math: "distri/math:v0.2.0"
+  extensions: "distri/extensions:v0.2.0"
+  core: "distri/core:v0.6.0"
