@@ -7,11 +7,18 @@ describe "Cornerstone", ->
   it "should provide Matrix", ->
     assert Matrix
 
-  it "should provide Point", ->
-    assert Point
+  describe "Point", ->
+    
+    it "should provide Point", ->
+      assert Point
 
-  it "should have Point::floor", ->
-    assert.equal Point(0.9, 0.9).floor().x, 0
+    [
+      "abs"
+      "ceil"
+      "floor"
+    ].forEach (method) ->
+      it "should have Point::#{method}", ->
+        assert Point()[method]
 
   it "should provide Random", ->
     assert Random

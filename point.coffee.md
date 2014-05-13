@@ -1,5 +1,10 @@
 Extend Point With Math Magic
 ============================
 
-    Point::floor = ->
-      Point(@x.floor(), @y.floor())
+    [
+      "abs"
+      "ceil"
+      "floor"
+    ].forEach (method) ->
+      Point.prototype[method] = ->
+        Point(@x[method](), @y[method]())
