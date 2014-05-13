@@ -34,8 +34,13 @@
               </div>
               
             </div>
-            <div class="content"><pre><code class="lang-coffeescript">Point::<span class="function"><span class="title">floor</span></span> = -&gt;
-  Point(<span class="property">@x</span>.floor(), <span class="property">@y</span>.floor())</code></pre>
+            <div class="content"><pre><code class="lang-coffeescript">[
+  <span class="string">"abs"</span>
+  <span class="string">"ceil"</span>
+  <span class="string">"floor"</span>
+].forEach (method) -&gt;
+  Point.prototype[method] = -&gt;
+    Point(<span class="property">@x</span>[method](), <span class="property">@y</span>[method]())</code></pre>
 </div>
         </li>
         
