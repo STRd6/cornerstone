@@ -2,171 +2,76 @@ window["distri/cornerstone:master"]({
   "source": {
     "LICENSE": {
       "path": "LICENSE",
-      "mode": "100644",
       "content": "The MIT License (MIT)\n\nCopyright (c) 2013 Daniel X Moore\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "mode": "100644",
       "type": "blob"
     },
     "README.md": {
       "path": "README.md",
-      "mode": "100644",
       "content": "cornerstone\n===========\n\nCore JavaScript Extensions.\n",
+      "mode": "100644",
       "type": "blob"
     },
     "cornerstone.coffee.md": {
       "path": "cornerstone.coffee.md",
+      "content": "Cornerstone\n===========\n\nRequire and pollute.\n\n    require \"extensions\"\n\n    global.Core = require(\"core\")\n\n    require(\"math\").pollute()\n\n    require \"./point\"\n",
       "mode": "100644",
-      "content": "Cornerstone\n===========\n\nRequire and pollute.\n\n    require \"extensions\"\n\n    global.Core = require(\"core\")\n\n    require(\"math\").pollute()\n",
       "type": "blob"
     },
     "pixie.cson": {
       "path": "pixie.cson",
+      "content": "version: \"0.2.1\"\nentryPoint: \"cornerstone\"\ndependencies:\n  math: \"distri/math:v0.2.0\"\n  extensions: \"distri/extensions:v0.2.0\"\n  core: \"distri/core:v0.6.0\"\n",
       "mode": "100644",
-      "content": "version: \"0.2.0\"\nentryPoint: \"cornerstone\"\ndependencies:\n  math: \"distri/math:v0.2.0\"\n  extensions: \"distri/extensions:v0.2.0\"\n  core: \"distri/core:v0.6.0\"\n",
       "type": "blob"
     },
     "test/cornerstone.coffee": {
       "path": "test/cornerstone.coffee",
+      "content": "require \"../cornerstone\"\n\ndescribe \"Cornerstone\", ->\n  it \"should provide Core\", ->\n    assert Core\n\n  it \"should provide Matrix\", ->\n    assert Matrix\n\n  it \"should provide Point\", ->\n    assert Point\n\n  it \"should have Point::floor\", ->\n    assert.equal Point(0.9, 0.9).floor().x, 0\n\n  it \"should provide Random\", ->\n    assert Random\n\n  it \"should provide rand\", ->\n    assert rand\n\n  it \"should provide Function#debounce\", ->\n    assert (->).debounce\n",
       "mode": "100644",
-      "content": "require \"../cornerstone\"\n\ndescribe \"Cornerstone\", ->\n  it \"should provide Core\", ->\n    assert Core\n\n  it \"should provide Matrix\", ->\n    assert Matrix\n\n  it \"should provide Point\", ->\n    assert Point\n\n  it \"should provide Random\", ->\n    assert Random\n\n  it \"should provide rand\", ->\n    assert rand\n\n  it \"should provide Function#debounce\", ->\n    assert (->).debounce\n",
       "type": "blob"
+    },
+    "point.coffee.md": {
+      "path": "point.coffee.md",
+      "content": "Extend Point With Math Magic\n============================\n\n    Point::floor = ->\n      Point(@x.floor(), @y.floor())\n",
+      "mode": "100644"
     }
   },
   "distribution": {
     "cornerstone": {
       "path": "cornerstone",
-      "content": "(function() {\n  require(\"extensions\");\n\n  global.Core = require(\"core\");\n\n  require(\"math\").pollute();\n\n}).call(this);\n\n//# sourceURL=cornerstone.coffee",
+      "content": "(function() {\n  require(\"extensions\");\n\n  global.Core = require(\"core\");\n\n  require(\"math\").pollute();\n\n  require(\"./point\");\n\n}).call(this);\n",
       "type": "blob"
     },
     "pixie": {
       "path": "pixie",
-      "content": "module.exports = {\"version\":\"0.2.0\",\"entryPoint\":\"cornerstone\",\"dependencies\":{\"math\":\"distri/math:v0.2.0\",\"extensions\":\"distri/extensions:v0.2.0\",\"core\":\"distri/core:v0.6.0\"}};",
+      "content": "module.exports = {\"version\":\"0.2.1\",\"entryPoint\":\"cornerstone\",\"dependencies\":{\"math\":\"distri/math:v0.2.0\",\"extensions\":\"distri/extensions:v0.2.0\",\"core\":\"distri/core:v0.6.0\"}};",
       "type": "blob"
     },
     "test/cornerstone": {
       "path": "test/cornerstone",
-      "content": "(function() {\n  require(\"../cornerstone\");\n\n  describe(\"Cornerstone\", function() {\n    it(\"should provide Core\", function() {\n      return assert(Core);\n    });\n    it(\"should provide Matrix\", function() {\n      return assert(Matrix);\n    });\n    it(\"should provide Point\", function() {\n      return assert(Point);\n    });\n    it(\"should provide Random\", function() {\n      return assert(Random);\n    });\n    it(\"should provide rand\", function() {\n      return assert(rand);\n    });\n    return it(\"should provide Function#debounce\", function() {\n      return assert((function() {}).debounce);\n    });\n  });\n\n}).call(this);\n\n//# sourceURL=test/cornerstone.coffee",
+      "content": "(function() {\n  require(\"../cornerstone\");\n\n  describe(\"Cornerstone\", function() {\n    it(\"should provide Core\", function() {\n      return assert(Core);\n    });\n    it(\"should provide Matrix\", function() {\n      return assert(Matrix);\n    });\n    it(\"should provide Point\", function() {\n      return assert(Point);\n    });\n    it(\"should have Point::floor\", function() {\n      return assert.equal(Point(0.9, 0.9).floor().x, 0);\n    });\n    it(\"should provide Random\", function() {\n      return assert(Random);\n    });\n    it(\"should provide rand\", function() {\n      return assert(rand);\n    });\n    return it(\"should provide Function#debounce\", function() {\n      return assert((function() {}).debounce);\n    });\n  });\n\n}).call(this);\n",
+      "type": "blob"
+    },
+    "point": {
+      "path": "point",
+      "content": "(function() {\n  Point.prototype.floor = function() {\n    return Point(this.x.floor(), this.y.floor());\n  };\n\n}).call(this);\n",
       "type": "blob"
     }
   },
   "progenitor": {
-    "url": "http://strd6.github.io/editor/"
+    "url": "http://www.danielx.net/editor/"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "entryPoint": "cornerstone",
   "repository": {
-    "id": 13576225,
-    "name": "cornerstone",
-    "full_name": "distri/cornerstone",
-    "owner": {
-      "login": "distri",
-      "id": 6005125,
-      "avatar_url": "https://identicons.github.com/f90c81ffc1498e260c820082f2e7ca5f.png",
-      "gravatar_id": null,
-      "url": "https://api.github.com/users/distri",
-      "html_url": "https://github.com/distri",
-      "followers_url": "https://api.github.com/users/distri/followers",
-      "following_url": "https://api.github.com/users/distri/following{/other_user}",
-      "gists_url": "https://api.github.com/users/distri/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/distri/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/distri/subscriptions",
-      "organizations_url": "https://api.github.com/users/distri/orgs",
-      "repos_url": "https://api.github.com/users/distri/repos",
-      "events_url": "https://api.github.com/users/distri/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/distri/received_events",
-      "type": "Organization",
-      "site_admin": false
-    },
-    "private": false,
-    "html_url": "https://github.com/distri/cornerstone",
-    "description": "Core JavaScript Extensions.",
-    "fork": false,
-    "url": "https://api.github.com/repos/distri/cornerstone",
-    "forks_url": "https://api.github.com/repos/distri/cornerstone/forks",
-    "keys_url": "https://api.github.com/repos/distri/cornerstone/keys{/key_id}",
-    "collaborators_url": "https://api.github.com/repos/distri/cornerstone/collaborators{/collaborator}",
-    "teams_url": "https://api.github.com/repos/distri/cornerstone/teams",
-    "hooks_url": "https://api.github.com/repos/distri/cornerstone/hooks",
-    "issue_events_url": "https://api.github.com/repos/distri/cornerstone/issues/events{/number}",
-    "events_url": "https://api.github.com/repos/distri/cornerstone/events",
-    "assignees_url": "https://api.github.com/repos/distri/cornerstone/assignees{/user}",
-    "branches_url": "https://api.github.com/repos/distri/cornerstone/branches{/branch}",
-    "tags_url": "https://api.github.com/repos/distri/cornerstone/tags",
-    "blobs_url": "https://api.github.com/repos/distri/cornerstone/git/blobs{/sha}",
-    "git_tags_url": "https://api.github.com/repos/distri/cornerstone/git/tags{/sha}",
-    "git_refs_url": "https://api.github.com/repos/distri/cornerstone/git/refs{/sha}",
-    "trees_url": "https://api.github.com/repos/distri/cornerstone/git/trees{/sha}",
-    "statuses_url": "https://api.github.com/repos/distri/cornerstone/statuses/{sha}",
-    "languages_url": "https://api.github.com/repos/distri/cornerstone/languages",
-    "stargazers_url": "https://api.github.com/repos/distri/cornerstone/stargazers",
-    "contributors_url": "https://api.github.com/repos/distri/cornerstone/contributors",
-    "subscribers_url": "https://api.github.com/repos/distri/cornerstone/subscribers",
-    "subscription_url": "https://api.github.com/repos/distri/cornerstone/subscription",
-    "commits_url": "https://api.github.com/repos/distri/cornerstone/commits{/sha}",
-    "git_commits_url": "https://api.github.com/repos/distri/cornerstone/git/commits{/sha}",
-    "comments_url": "https://api.github.com/repos/distri/cornerstone/comments{/number}",
-    "issue_comment_url": "https://api.github.com/repos/distri/cornerstone/issues/comments/{number}",
-    "contents_url": "https://api.github.com/repos/distri/cornerstone/contents/{+path}",
-    "compare_url": "https://api.github.com/repos/distri/cornerstone/compare/{base}...{head}",
-    "merges_url": "https://api.github.com/repos/distri/cornerstone/merges",
-    "archive_url": "https://api.github.com/repos/distri/cornerstone/{archive_format}{/ref}",
-    "downloads_url": "https://api.github.com/repos/distri/cornerstone/downloads",
-    "issues_url": "https://api.github.com/repos/distri/cornerstone/issues{/number}",
-    "pulls_url": "https://api.github.com/repos/distri/cornerstone/pulls{/number}",
-    "milestones_url": "https://api.github.com/repos/distri/cornerstone/milestones{/number}",
-    "notifications_url": "https://api.github.com/repos/distri/cornerstone/notifications{?since,all,participating}",
-    "labels_url": "https://api.github.com/repos/distri/cornerstone/labels{/name}",
-    "releases_url": "https://api.github.com/repos/distri/cornerstone/releases{/id}",
-    "created_at": "2013-10-14T23:43:38Z",
-    "updated_at": "2013-12-24T00:47:00Z",
-    "pushed_at": "2013-10-15T21:45:36Z",
-    "git_url": "git://github.com/distri/cornerstone.git",
-    "ssh_url": "git@github.com:distri/cornerstone.git",
-    "clone_url": "https://github.com/distri/cornerstone.git",
-    "svn_url": "https://github.com/distri/cornerstone",
-    "homepage": null,
-    "size": 504,
-    "stargazers_count": 0,
-    "watchers_count": 0,
-    "language": "CoffeeScript",
-    "has_issues": true,
-    "has_downloads": true,
-    "has_wiki": true,
-    "forks_count": 0,
-    "mirror_url": null,
-    "open_issues_count": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "watchers": 0,
-    "default_branch": "master",
-    "master_branch": "master",
-    "permissions": {
-      "admin": true,
-      "push": true,
-      "pull": true
-    },
-    "organization": {
-      "login": "distri",
-      "id": 6005125,
-      "avatar_url": "https://identicons.github.com/f90c81ffc1498e260c820082f2e7ca5f.png",
-      "gravatar_id": null,
-      "url": "https://api.github.com/users/distri",
-      "html_url": "https://github.com/distri",
-      "followers_url": "https://api.github.com/users/distri/followers",
-      "following_url": "https://api.github.com/users/distri/following{/other_user}",
-      "gists_url": "https://api.github.com/users/distri/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/distri/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/distri/subscriptions",
-      "organizations_url": "https://api.github.com/users/distri/orgs",
-      "repos_url": "https://api.github.com/users/distri/repos",
-      "events_url": "https://api.github.com/users/distri/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/distri/received_events",
-      "type": "Organization",
-      "site_admin": false
-    },
-    "network_count": 0,
-    "subscribers_count": 1,
     "branch": "master",
-    "defaultBranch": "master"
+    "default_branch": "master",
+    "full_name": "distri/cornerstone",
+    "homepage": null,
+    "description": "Core JavaScript Extensions.",
+    "html_url": "https://github.com/distri/cornerstone",
+    "url": "https://api.github.com/repos/distri/cornerstone",
+    "publishBranch": "gh-pages"
   },
   "dependencies": {
     "math": {
@@ -903,7 +808,7 @@ window["distri/cornerstone:master"]({
         "extensions.coffee.md": {
           "path": "extensions.coffee.md",
           "mode": "100644",
-          "content": "Extensions\n==========\n\n    require \"./array\"\n    require \"./function\"\n    require \"./number\"\n    require \"./string\"\n",
+          "content": "Extensions\n==========\n\nExtend built in prototypes with additional behavior.\n\n    require \"./array\"\n    require \"./function\"\n    require \"./number\"\n    require \"./string\"\n",
           "type": "blob"
         },
         "function.coffee.md": {
