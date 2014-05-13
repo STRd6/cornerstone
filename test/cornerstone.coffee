@@ -10,6 +10,9 @@ describe "Cornerstone", ->
   it "should provide Point", ->
     assert Point
 
+  it "should have Point::floor", ->
+    assert.equal Point(0.9, 0.9).floor().x, 0
+
   it "should provide Random", ->
     assert Random
 
