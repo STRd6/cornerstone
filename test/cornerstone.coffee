@@ -2,15 +2,15 @@ require "../cornerstone"
 
 describe "Cornerstone", ->
   it "should provide Core", ->
-    assert Core
+    assert Core()
 
   it "should provide Matrix", ->
-    assert Matrix
+    assert Matrix()
 
   describe "Point", ->
-    
+
     it "should provide Point", ->
-      assert Point
+      assert Point()
 
     [
       "abs"
