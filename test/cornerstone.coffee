@@ -7,6 +7,12 @@ describe "Cornerstone", ->
   it "should provide Matrix", ->
     assert Matrix()
 
+  it "should provide Model", ->
+    assert Model()
+
+  it "should provide Observable", ->
+    assert Observable()
+
   describe "Point", ->
 
     it "should provide Point", ->
@@ -28,3 +34,9 @@ describe "Cornerstone", ->
 
   it "should provide Function#debounce", ->
     assert (->).debounce
+
+  it "should provide extend", ->
+    assert extend
+
+  it "should provied defaults", ->
+    assert defaults
