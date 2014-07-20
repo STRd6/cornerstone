@@ -37,7 +37,14 @@
             </div>
             <div class="content"><pre><code class="lang-coffeescript">require <span class="string">"extensions"</span>
 
-global.Core = require(<span class="string">"core"</span>)
+{extend, defaults} = require <span class="string">"util"</span>
+
+extend global,
+  Core: require <span class="string">"core"</span>
+  defaults: defaults
+  extend: extend
+  Model: require <span class="string">"model"</span>
+  Observable: require <span class="string">"observable"</span>
 
 require(<span class="string">"math"</span>).pollute()
 
