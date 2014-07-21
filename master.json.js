@@ -20,7 +20,7 @@ window["distri/cornerstone:master"]({
     },
     "pixie.cson": {
       "path": "pixie.cson",
-      "content": "version: \"0.2.3-pre.0\"\nentryPoint: \"cornerstone\"\ndependencies:\n  core: \"distri/core:v0.6.0\"\n  extensions: \"distri/extensions:v0.2.0\"\n  math: \"distri/math:v0.2.0\"\n  model: \"distri/model:v0.1.3\"\n  observable: \"distri/observable:v0.3.1\"\n  util: \"distri/util:v0.1.0\"\n",
+      "content": "version: \"0.2.3\"\nentryPoint: \"cornerstone\"\ndependencies:\n  core: \"distri/core:v0.6.0\"\n  extensions: \"distri/extensions:v0.2.0\"\n  math: \"distri/math:v0.2.0\"\n  model: \"distri/model:v0.1.3\"\n  observable: \"distri/observable:v0.3.1\"\n  util: \"distri/util:v0.1.0\"\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -45,7 +45,7 @@ window["distri/cornerstone:master"]({
     },
     "pixie": {
       "path": "pixie",
-      "content": "module.exports = {\"version\":\"0.2.3-pre.0\",\"entryPoint\":\"cornerstone\",\"dependencies\":{\"core\":\"distri/core:v0.6.0\",\"extensions\":\"distri/extensions:v0.2.0\",\"math\":\"distri/math:v0.2.0\",\"model\":\"distri/model:v0.1.3\",\"observable\":\"distri/observable:v0.3.1\",\"util\":\"distri/util:v0.1.0\"}};",
+      "content": "module.exports = {\"version\":\"0.2.3\",\"entryPoint\":\"cornerstone\",\"dependencies\":{\"core\":\"distri/core:v0.6.0\",\"extensions\":\"distri/extensions:v0.2.0\",\"math\":\"distri/math:v0.2.0\",\"model\":\"distri/model:v0.1.3\",\"observable\":\"distri/observable:v0.3.1\",\"util\":\"distri/util:v0.1.0\"}};",
       "type": "blob"
     },
     "point": {
@@ -62,7 +62,7 @@ window["distri/cornerstone:master"]({
   "progenitor": {
     "url": "http://www.danielx.net/editor/"
   },
-  "version": "0.2.3-pre.0",
+  "version": "0.2.3",
   "entryPoint": "cornerstone",
   "repository": {
     "branch": "master",
