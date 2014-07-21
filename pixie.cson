@@ -1,4 +1,4 @@
-version: "0.2.3-pre.0"
+version: "0.2.3"
 entryPoint: "cornerstone"
 dependencies:
   core: "distri/core:v0.6.0"
