@@ -1,6 +1,9 @@
 require "../cornerstone"
 
 describe "Cornerstone", ->
+  it "should provide Bindable", ->
+    assert Bindable()
+
   it "should provide Core", ->
     assert Core()
 

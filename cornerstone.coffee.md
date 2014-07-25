@@ -8,6 +8,7 @@ Require and pollute.
     {extend, defaults} = require "util"
 
     extend global,
+      Bindable: require "bindable"
       Core: require "core"
       defaults: defaults
       extend: extend
