@@ -180,7 +180,7 @@
     },
     "cornerstone.coffee.md": {
       "path": "cornerstone.coffee.md",
-      "content": "Cornerstone\n===========\n\nRequire and pollute.\n\n    require \"extensions\"\n\n    {extend, defaults} = require \"util\"\n\n    extend global,\n      Bindable: require \"bindable\"\n      Core: require \"core\"\n      defaults: defaults\n      extend: extend\n      Model: require \"model\"\n      Observable: require \"observable\"\n\n    require(\"math\").pollute()\n\n    require \"./point\"\n",
+      "content": "Cornerstone\n===========\n\n`Cornerstone` is the foundation for complex applications. There is always a\ntradeoff between explicit dependencies and a robust standard environment.\n\nCornerstone is to be used when we want a better environment and don't mind\nnot explicitly requiring each individual dependency.\n\nRequire and pollute.\n\n    require \"extensions\"\n\n    {extend, defaults} = require \"util\"\n\n    extend global,\n      Bindable: require \"bindable\"\n      Core: require \"core\"\n      defaults: defaults\n      extend: extend\n      Model: require \"model\"\n      Observable: require \"observable\"\n\n    require(\"math\").pollute()\n\n    require \"./point\"\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -192,7 +192,7 @@
     },
     "point.coffee.md": {
       "path": "point.coffee.md",
-      "content": "Extend Point With Math Magic\n============================\n\n    [\n      \"abs\"\n      \"ceil\"\n      \"floor\"\n    ].forEach (method) ->\n      Point.prototype[method] = ->\n        Point(@x[method](), @y[method]())\n",
+      "content": "Extend Point With Math Magic\n============================\n\nLet's add our number extensions to `Point`s.\n\n    [\n      \"abs\"\n      \"ceil\"\n      \"floor\"\n    ].forEach (method) ->\n      Point.prototype[method] = ->\n        Point(@x[method](), @y[method]())\n",
       "mode": "100644",
       "type": "blob"
     },
