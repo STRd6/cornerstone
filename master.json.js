@@ -8,13 +8,13 @@ window["distri/cornerstone:master"]({
     },
     "README.md": {
       "path": "README.md",
-      "content": "cornerstone\n===========\n\nCore JavaScript Extensions.\n",
+      "content": "cornerstone\n===========\n\n`Cornerstone` is the foundation for complex applications. There is always a\ntradeoff between explicit dependencies and a robust standard environment.\n\nCornerstone is to be used when we want a better environment and don't mind\nnot explicitly requiring each individual dependency.\n",
       "mode": "100644",
       "type": "blob"
     },
     "cornerstone.coffee.md": {
       "path": "cornerstone.coffee.md",
-      "content": "Cornerstone\n===========\n\n`Cornerstone` is the foundation for complex applications. There is always a\ntradeoff between explicit dependencies and a robust standard environment.\n\nCornerstone is to be used when we want a better environment and don't mind\nnot explicitly requiring each individual dependency.\n\nRequire and pollute.\n\n    require \"extensions\"\n\n    {extend, defaults} = require \"util\"\n\n    extend global,\n      Bindable: require \"bindable\"\n      Core: require \"core\"\n      defaults: defaults\n      extend: extend\n      Model: require \"model\"\n      Observable: require \"observable\"\n\n    require(\"math\").pollute()\n\n    require \"./point\"\n",
+      "content": "Cornerstone\n===========\n\n`Cornerstone` is the foundation for complex applications. There is always a\ntradeoff between explicit dependencies and a robust standard environment.\n\nCornerstone is to be used when we want a better environment and don't mind\nnot explicitly requiring each individual dependency.\n\nImplementation\n--------------\n\nAdd all of the built in extensions.\n\n    require \"extensions\"\n\n    {extend, defaults} = require \"util\"\n\nPollute the global environment.\n\n    extend global,\n      Bindable: require \"bindable\"\n      Core: require \"core\"\n      defaults: defaults\n      extend: extend\n      Model: require \"model\"\n      Observable: require \"observable\"\n\n    require(\"math\").pollute()\n\nAdd our extra Point extensions\n\n    require \"./point\"\n",
       "mode": "100644",
       "type": "blob"
     },

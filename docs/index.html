@@ -36,14 +36,39 @@
 tradeoff between explicit dependencies and a robust standard environment.</p>
 <p>Cornerstone is to be used when we want a better environment and don&#39;t mind
 not explicitly requiring each individual dependency.</p>
-<p>Require and pollute.</p>
+<h2 id="implementation">Implementation</h2>
+
+            </div>
+            <div class="content"><pre><code class="lang-coffeescript">
+</code></pre>
+</div>
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Add all of the built in extensions.</p>
 
             </div>
             <div class="content"><pre><code class="lang-coffeescript">require <span class="string">"extensions"</span>
 
-{extend, defaults} = require <span class="string">"util"</span>
+{extend, defaults} = require <span class="string">"util"</span></code></pre>
+</div>
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Pollute the global environment.</p>
 
-extend global,
+            </div>
+            <div class="content"><pre><code class="lang-coffeescript">extend global,
   Bindable: require <span class="string">"bindable"</span>
   Core: require <span class="string">"core"</span>
   defaults: defaults
@@ -51,9 +76,20 @@ extend global,
   Model: require <span class="string">"model"</span>
   Observable: require <span class="string">"observable"</span>
 
-require(<span class="string">"math"</span>).pollute()
+require(<span class="string">"math"</span>).pollute()</code></pre>
+</div>
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Add our extra Point extensions</p>
 
-require <span class="string">"./point"</span></code></pre>
+            </div>
+            <div class="content"><pre><code class="lang-coffeescript">require <span class="string">"./point"</span></code></pre>
 </div>
         </li>
         
