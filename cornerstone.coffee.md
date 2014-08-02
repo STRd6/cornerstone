@@ -7,11 +7,16 @@ tradeoff between explicit dependencies and a robust standard environment.
 Cornerstone is to be used when we want a better environment and don't mind
 not explicitly requiring each individual dependency.
 
-Require and pollute.
+Implementation
+--------------
+
+Add all of the built in extensions.
 
     require "extensions"
 
     {extend, defaults} = require "util"
+
+Pollute the global environment.
 
     extend global,
       Bindable: require "bindable"
@@ -22,5 +27,7 @@ Require and pollute.
       Observable: require "observable"
 
     require("math").pollute()
+
+Add our extra Point extensions
 
     require "./point"
