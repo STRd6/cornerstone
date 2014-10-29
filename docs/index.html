@@ -55,7 +55,9 @@ not explicitly requiring each individual dependency.</p>
             </div>
             <div class="content"><pre><code class="lang-coffeescript">require <span class="string">"extensions"</span>
 
-{extend, defaults} = require <span class="string">"util"</span></code></pre>
+{extend, defaults} = require <span class="string">"util"</span>
+
+Q = require <span class="string">"q"</span></code></pre>
 </div>
         </li>
         
@@ -71,10 +73,12 @@ not explicitly requiring each individual dependency.</p>
             <div class="content"><pre><code class="lang-coffeescript">extend global,
   Bindable: require <span class="string">"bindable"</span>
   Core: require <span class="string">"core"</span>
+  Deferred: Q.defer
   defaults: defaults
   extend: extend
   Model: require <span class="string">"model"</span>
   Observable: require <span class="string">"observable"</span>
+  Q: Q
 
 require(<span class="string">"math"</span>).pollute()</code></pre>
 </div>
