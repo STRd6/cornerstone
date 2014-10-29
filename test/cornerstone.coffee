@@ -7,6 +7,15 @@ describe "Cornerstone", ->
   it "should provide Core", ->
     assert Core()
 
+  it "should provide Deferred", (done) ->
+    deferred = Deferred()
+
+    promise = deferred.promise
+
+    promise.then done
+
+    deferred.fulfill()
+
   it "should provide Matrix", ->
     assert Matrix()
 
@@ -28,6 +37,9 @@ describe "Cornerstone", ->
     ].forEach (method) ->
       it "should have Point::#{method}", ->
         assert Point()[method]
+
+  it "should provide Q", ->
+    assert Q
 
   it "should provide Random", ->
     assert Random

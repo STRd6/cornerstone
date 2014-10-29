@@ -16,15 +16,19 @@ Add all of the built in extensions.
 
     {extend, defaults} = require "util"
 
+    Q = require "q"
+
 Pollute the global environment.
 
     extend global,
       Bindable: require "bindable"
       Core: require "core"
+      Deferred: Q.defer
       defaults: defaults
       extend: extend
       Model: require "model"
       Observable: require "observable"
+      Q: Q
 
     require("math").pollute()
 
