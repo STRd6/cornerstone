@@ -57,6 +57,7 @@ not explicitly requiring each individual dependency.</p>
 
 {extend, defaults} = require <span class="string">"util"</span>
 
+Inflector = require(<span class="string">"inflector"</span>)
 Q = require <span class="string">"q"</span></code></pre>
 </div>
         </li>
@@ -74,12 +75,14 @@ Q = require <span class="string">"q"</span></code></pre>
   Bindable: require <span class="string">"bindable"</span>
   Core: require <span class="string">"core"</span>
   Deferred: Q.defer
+  Inflector: Inflector
   defaults: defaults
   extend: extend
   Model: require <span class="string">"model"</span>
   Observable: require <span class="string">"observable"</span>
   Q: Q
 
+Inflector.pollute()
 require(<span class="string">"math"</span>).pollute()</code></pre>
 </div>
         </li>
