@@ -16,6 +16,7 @@ Add all of the built in extensions.
 
     {extend, defaults} = require "util"
 
+    Inflector = require("inflector")
     Q = require "q"
 
 Pollute the global environment.
@@ -24,12 +25,14 @@ Pollute the global environment.
       Bindable: require "bindable"
       Core: require "core"
       Deferred: Q.defer
+      Inflector: Inflector
       defaults: defaults
       extend: extend
       Model: require "model"
       Observable: require "observable"
       Q: Q
 
+    Inflector.pollute()
     require("math").pollute()
 
 Add our extra Point extensions
