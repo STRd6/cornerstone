@@ -47,6 +47,9 @@ describe "Cornerstone", ->
   it "should provide rand", ->
     assert rand
 
+  it "should provide Size", ->
+    assert Size
+
   it "should provide Function#debounce", ->
     assert (->).debounce
 
