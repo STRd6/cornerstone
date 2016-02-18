@@ -76,7 +76,7 @@
   "version": "0.2.10",
   "entryPoint": "cornerstone",
   "repository": {
-    "branch": "master",
+    "branch": "v0.2.10",
     "default_branch": "master",
     "full_name": "distri/cornerstone",
     "homepage": null,
