@@ -21,16 +21,19 @@ Add all of the built in extensions.
 
 Pollute the global environment.
 
+    Model = require "model"
+
     extend global,
       Bindable: require "bindable"
-      Core: require "core"
+      Core: Model.Core
       Deferred: Q.defer
       Inflector: Inflector
       defaults: defaults
       extend: extend
-      Model: require "model"
-      Observable: require "observable"
+      Model: Model
       Q: Q
+
+    global.Observable ?= Model.Observable
 
     Inflector.pollute()
     require("math").pollute()
