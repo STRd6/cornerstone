@@ -63,16 +63,19 @@ Q = require <span class="string">"q"</span></code></pre>
     <p>Pollute the global environment.</p>
 
   </div>
-  <div class="content"><pre><code class="lang-coffeescript">extend global,
+  <div class="content"><pre><code class="lang-coffeescript">Model = require <span class="string">"model"</span>
+
+extend global,
   Bindable: require <span class="string">"bindable"</span>
-  Core: require <span class="string">"core"</span>
+  Core: Model.Core
   Deferred: Q.defer
   Inflector: Inflector
   defaults: defaults
   extend: extend
-  Model: require <span class="string">"model"</span>
-  Observable: require <span class="string">"observable"</span>
+  Model: Model
   Q: Q
+
+global.Observable ?= Model.Observable
 
 Inflector.pollute()
 require(<span class="string">"math"</span>).pollute()</code></pre>
