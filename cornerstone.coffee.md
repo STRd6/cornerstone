@@ -17,7 +17,6 @@ Add all of the built in extensions.
     {extend, defaults} = require "util"
 
     Inflector = require("inflector")
-    Q = require "q"
 
 Pollute the global environment.
 
@@ -26,12 +25,10 @@ Pollute the global environment.
     extend global,
       Bindable: require "bindable"
       Core: Model.Core
-      Deferred: Q.defer
       Inflector: Inflector
       defaults: defaults
       extend: extend
       Model: Model
-      Q: Q
 
     global.Observable ?= Model.Observable
 

@@ -1,4 +1,4 @@
-version: "0.3.0-pre.2"
+version: "0.3.0-pre.3"
 entryPoint: "cornerstone"
 dependencies:
   bindable: "distri/bindable:v0.1.0"
@@ -6,5 +6,4 @@ dependencies:
   inflector: "distri/inflector:v0.2.1"
   math: "distri/math:v0.2.6-pre.0"
   model: "distri/model:v0.2.0-pre.2"
-  q: "distri/q:v1.0.1"
   util: "distri/util:v0.1.0"
