@@ -51,8 +51,7 @@ not explicitly requiring each individual dependency.</p>
 
 {extend, defaults} = require <span class="string">"util"</span>
 
-Inflector = require(<span class="string">"inflector"</span>)
-Q = require <span class="string">"q"</span></code></pre>
+Inflector = require(<span class="string">"inflector"</span>)</code></pre>
 </div>
 </li>
 <li id="section-4">
@@ -68,12 +67,10 @@ Q = require <span class="string">"q"</span></code></pre>
 extend global,
   Bindable: require <span class="string">"bindable"</span>
   Core: Model.Core
-  Deferred: Q.defer
   Inflector: Inflector
   defaults: defaults
   extend: extend
   Model: Model
-  Q: Q
 
 global.Observable ?= Model.Observable
 
