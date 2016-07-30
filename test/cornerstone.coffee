@@ -46,3 +46,8 @@ describe "Cornerstone", ->
 
   it "should provied defaults", ->
     assert defaults
+
+  it "should know dependency sizes", ->
+    deps = PACKAGE.dependencies
+    console.log Object.keys(deps).map (name) ->
+      "#{name}: #{JSON.stringify(deps[name]).length}"
